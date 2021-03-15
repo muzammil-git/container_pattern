@@ -1,7 +1,11 @@
-import 'package:container_pattern/PlacesList.dart';
+import 'package:container_pattern/views/HomeView.dart';
+import 'package:container_pattern/views/new_trips/first_view.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -15,7 +19,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: FirstView(),
+      // home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -105,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) =>
-                  PlacesList()));
+                  HomeView()));
                 },
               ),
             )

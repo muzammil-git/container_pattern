@@ -1,8 +1,9 @@
-import 'package:container_pattern/Trip.dart';
+import 'package:container_pattern/model/Trip.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class PlacesList extends StatelessWidget {
+class PlacesListView extends StatelessWidget {
   final List<Trip> tripList = [
     Trip("America", DateTime.now(), DateTime.now(), 200.0, "Car"),
     Trip("Maldives", DateTime.now(), DateTime.now(), 700.0, "Plane"),
@@ -10,10 +11,10 @@ class PlacesList extends StatelessWidget {
     Trip("Canada", DateTime.now(), DateTime.now(), 100.0, "Train")
   ];
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Container(
         // width: MediaQuery.of(context).size.width,
         // height: MediaQuery.of(context).size.height,
@@ -77,6 +78,7 @@ class PlacesList extends StatelessWidget {
       ),
     );
   }
+
 }
 
 //  child: Column(
